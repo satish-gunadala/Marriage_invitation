@@ -1,7 +1,40 @@
 const cover = document.querySelector("#cover");
 const openButton = document.querySelector("#openInvitation");
+const weddingMusic = document.querySelector("#weddingMusic");
+const musicToggle = document.querySelector("#musicToggle");
+const musicIcon = musicToggle.querySelector(".music-toggle__icon");
+const musicLabel = musicToggle.querySelector(".music-toggle__label");
+
+weddingMusic.volume = 0.24;
+
+function updateMusicControl(isPlaying) {
+  musicToggle.setAttribute("aria-pressed", String(isPlaying));
+  musicToggle.setAttribute("aria-label", `${isPlaying ? "Pause" : "Play"} background music`);
+  musicToggle.title = `${isPlaying ? "Pause" : "Play"} background music`;
+  musicIcon.textContent = isPlaying ? "♫" : "♪";
+  musicLabel.textContent = isPlaying ? "Pause music" : "Play music";
+}
+
+async function playWeddingMusic() {
+  try {
+    await weddingMusic.play();
+    updateMusicControl(true);
+  } catch {
+    updateMusicControl(false);
+  }
+}
+
+musicToggle.addEventListener("click", () => {
+  if (weddingMusic.paused) {
+    playWeddingMusic();
+  } else {
+    weddingMusic.pause();
+    updateMusicControl(false);
+  }
+});
 
 openButton.addEventListener("click", () => {
+  playWeddingMusic();
   cover.classList.add("is-open");
   window.setTimeout(() => cover.remove(), 1300);
 });
