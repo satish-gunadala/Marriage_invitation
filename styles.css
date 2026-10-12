@@ -28,23 +28,27 @@ a { color: inherit; }
 .cover.is-open { visibility: hidden; transform: scale(1.04); }
 @keyframes nudge { 50% { transform: translateY(4px); } }
 
-.site-header { position: absolute; z-index: 2; top: 0; display: flex; width: 100%; height: 82px; align-items: center; justify-content: space-between; padding: 0 clamp(24px, 7vw, 100px); border-bottom: 1px solid rgba(30,60,46,.1); }
-.wordmark { color: var(--forest); font: 600 29px var(--serif); text-decoration: none; }
+.site-header { position: absolute; z-index: 2; top: 0; display: flex; width: 100%; height: 82px; align-items: center; justify-content: space-between; padding: 0 clamp(24px, 7vw, 100px); border-bottom: 1px solid rgba(218,194,136,.23); }
+.wordmark { color: #f4e8c7; font: 600 29px var(--serif); text-decoration: none; }
 .wordmark span { color: var(--saffron); font-size: .65em; }
 .site-header nav { display: flex; align-items: center; gap: clamp(18px, 4vw, 48px); }
-.site-header nav a { font-size: 12px; text-decoration: none; }
+.site-header nav a { color: #f4e8c7; font-size: 12px; text-decoration: none; }
 .site-header nav a:hover, .text-link:hover { color: var(--saffron); }
 
 .section-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-.welcome { display: grid; min-height: 720px; align-content: center; justify-items: center; padding: 115px 20px 90px; text-align: center; }
+.welcome { position: relative; isolation: isolate; display: grid; width: 100%; min-height: 720px; align-content: center; justify-items: center; overflow: hidden; padding: 125px 24px 96px; color: #f7f1e2; background: var(--forest-deep); background-image: repeating-linear-gradient(135deg, transparent 0 47px, rgba(185,155,96,.025) 48px 49px); text-align: center; }
+.welcome::before { position: absolute; z-index: -1; inset: 17px; border: 1px solid rgba(207,178,111,.52); box-shadow: inset 0 0 0 5px rgba(207,178,111,.06), inset 0 0 0 6px rgba(207,178,111,.2); content: ""; pointer-events: none; }
+.welcome .eyebrow { color: #d8c18a; }
+.welcome h2 { color: #fff8e7; }
 .welcome h2, .section-heading h2 { margin: 0; font: 500 clamp(56px, 8vw, 92px)/.88 var(--serif); }
-.welcome h2 em, .section-heading h2 em { color: var(--saffron); font-weight: 400; }
-.welcome__copy { max-width: 440px; margin: 27px auto 22px; color: #676d5f; }
+.welcome h2 em { color: #e5cf98; font-weight: 400; }
+.section-heading h2 em { color: var(--saffron); font-weight: 400; }
+.welcome__copy { max-width: 440px; margin: 27px auto 22px; color: rgba(247,241,226,.82); }
 .welcome__rule { display: flex; width: 200px; align-items: center; gap: 13px; color: var(--gold); font-size: 18px; }
-.welcome__rule span { height: 1px; flex: 1; background: #d8cba9; }
-.welcome__names { margin: 24px 0 1px; font: 500 24px var(--serif); }
-.welcome__names span { padding: 0 6px; color: var(--saffron); font-style: italic; }
-.welcome__small { margin: 0; color: var(--muted); font-size: 9px; letter-spacing: 1.8px; }
+.welcome__rule span { height: 1px; flex: 1; background: rgba(216,193,138,.65); }
+.welcome__names { margin: 24px 0 1px; color: #f6e9c4; font: 500 27px var(--serif); }
+.welcome__names span { padding: 0 7px; color: #d5b978; font-style: italic; }
+.welcome__small { margin: 0; color: #d1c5a6; font-size: 9px; letter-spacing: 1.8px; }
 
 .section-heading { display: grid; justify-items: center; text-align: center; }
 .section-heading > p:last-child { max-width: 430px; margin: 19px 0 0; color: var(--muted); }
@@ -95,7 +99,7 @@ a { color: inherit; }
   .site-header { height: 70px; padding: 0 22px; }
   .site-header nav { gap: 15px; }
   .site-header nav a { font-size: 11px; }
-  .welcome { min-height: 630px; }
+  .welcome { min-height: 650px; }
   .invitation-art { padding: 68px 0 80px; }
   .event { grid-template-columns: 77px 1fr; gap: 18px; }
   .event__date span { font-size: 43px; }
@@ -108,7 +112,7 @@ a { color: inherit; }
   .site-header nav { gap: 11px; }
   .site-header nav a { font-size: 10px; }
   .section-shell { width: min(100% - 38px, 420px); }
-  .welcome { min-height: 570px; padding-inline: 5px; }
+  .welcome { min-height: 610px; padding: 105px 12px 80px; }
   .welcome .eyebrow { max-width: 260px; }
   .welcome__names { font-size: 21px; }
   .countdown__inner { padding: 69px 0; }
