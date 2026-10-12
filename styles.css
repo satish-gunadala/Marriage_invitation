@@ -43,6 +43,19 @@ a { color: inherit; }
 .invitation-art__link { display: block; width: min(720px, 100%); margin: 0 auto; }
 .invitation-art__link img { display: block; width: 100%; height: auto; }
 
+.couple { padding: 18px 0 100px; }
+.couple .section-heading { margin-bottom: 42px; }
+.couple__profiles { display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: center; gap: 25px; }
+.profile-card { display: grid; min-width: 0; justify-items: center; padding: 32px 24px 29px; border: 1px solid rgba(180,149,88,.32); border-radius: 7px; background: rgba(255,255,255,.8); box-shadow: 0 14px 38px rgba(48,60,44,.07); text-align: center; }
+.profile__portrait { width: 150px; height: 150px; margin-bottom: 22px; border: 3px solid #c9a83e; border-radius: 50%; background-color: #eadcb4; background-image: url("images/cover.png"); background-repeat: no-repeat; background-size: 470% auto; box-shadow: 0 0 0 5px var(--paper), 0 8px 23px rgba(103,83,44,.14); }
+.profile__portrait--groom { background-position: 42% 45%; }
+.profile__portrait--bride { background-position: 12% 29%; }
+.profile-card .eyebrow { margin-bottom: 9px; }
+.profile-card h3 { margin: 0; color: var(--forest-deep); font: 500 clamp(34px, 4vw, 47px)/1.05 var(--serif); }
+.profile-card__role { margin: 8px 0 0; color: var(--saffron); font: italic 18px/1.3 var(--serif); }
+.profile-card__family { max-width: 340px; margin: 13px 0 0; color: #6c6c61; font-size: 13px; line-height: 1.7; }
+.couple__amp { display: grid; place-items: center; color: var(--gold); font: italic 52px/.8 var(--serif); }
+
 .countdown { position: relative; overflow: hidden; color: #f6efdd; background: var(--forest); }
 .countdown::before, .countdown::after { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(211,184,113,.17); border-radius: 50%; content: ""; }
 .countdown::before { top: -205px; left: -95px; box-shadow: 0 0 0 20px rgba(0,0,0,0), 0 0 0 21px rgba(211,184,113,.1), 0 0 0 43px rgba(0,0,0,0), 0 0 0 44px rgba(211,184,113,.08); }
@@ -85,6 +98,12 @@ a { color: inherit; }
   .site-header nav { gap: 15px; }
   .site-header nav a { font-size: 11px; }
   .invitation-art.section-shell { padding: 16px 20px 68px; }
+  .couple { padding: 10px 0 74px; }
+  .couple .section-heading { margin-bottom: 28px; }
+  .couple__profiles { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+  .profile-card { padding: 26px 20px 24px; }
+  .profile__portrait { width: 132px; height: 132px; margin-bottom: 18px; }
+  .couple__amp { font-size: 37px; }
   .event { grid-template-columns: 77px 1fr; gap: 18px; }
   .event__date span { font-size: 43px; }
 }
